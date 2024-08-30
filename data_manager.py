@@ -1,8 +1,8 @@
-import ttkbootstrap as tkk
+# This class is responsible for creating another window for tkinter, and generate the results.
 
+import ttkbootstrap as tkk
 class DataManager():
     
-    #This class is responsible for talking to the Google Sheet.
     def __init__(self,flights) -> None:
         self.sub_root = tkk.Toplevel()
         self.sub_root.title("Flight Results")
