@@ -1,6 +1,6 @@
-import requests
+# This class is responsible for searching for aiports that are within the 250km radius of input city.
 
-# this class will return all airports within the radius of 250km
+import requests
 
 class AirportSearch():
     def __init__(self) -> None:
@@ -23,10 +23,10 @@ class AirportSearch():
                 'lat':location[1],
             }
 
-            response = requests.get(url = self.airport_search_endpoint,                 #send request to tequilla kiwi 
-                                    headers= airport_search_headers,                    #to get airports information
+            response = requests.get(url = self.airport_search_endpoint,                 # send request to tequilla kiwi 
+                                    headers= airport_search_headers,                    # to get airports information
                                     params= airport_search_query)               
-            airports = response.json()['locations'][0]['alternative_departure_points']  #filter so that only return aiports
+            airports = response.json()['locations'][0]['alternative_departure_points']  # filter so that only return aiports
 
             airports_info =[]                           # An empty list to store all available airports,
                                                         # and its information
@@ -37,7 +37,8 @@ class AirportSearch():
             return airports_info
         else:
             return None
-
+            
+    # get the longitude and latitude of the city for airport search.
     def __get_lon_lat(self,city):
 
         lon_lat_query ={
