@@ -1,7 +1,9 @@
+ # This class is responsible for structuring the flight data.
+
 from datetime import datetime as dt
 
 class FlightData:
-    #This class is responsible for structuring the flight data.
+   
     def __init__(self,
                  origin_airport:str,
                  origin_city:str,
