@@ -1,3 +1,5 @@
+# This class is responsible for creating the user interface.
+
 import ttkbootstrap as tkk
 import tkinter as tk
 import json
