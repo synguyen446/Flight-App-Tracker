@@ -1,3 +1,5 @@
+# This class is responsible for checking for available flights with the given paramenters.
+
 import requests
 from flight_data import FlightData
 from datetime import datetime as dt
