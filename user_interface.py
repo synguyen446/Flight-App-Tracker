@@ -200,7 +200,7 @@ class FlightSearchApp():
             entry.delete(0,tkk.END)
             entry.insert(tkk.END,selected_option)
 
-    def search(self):
+    def search(self) -> None:
         if self.origin_location_entry.get()=='' or self.destination_location_entry.get() == '' \
         or self.departure_date.entry.get() =='':
             print("Please fill in required information")
@@ -217,7 +217,7 @@ class FlightSearchApp():
             data_manager = DataManager(flights)
             data_manager.generate()
 
-    def check_entry(self,event,label):
+    def check_entry(self,event,label) -> None:
         widget = event.widget
         column = widget.grid_info()['column']
         row = widget.grid_info()['row']
@@ -231,20 +231,20 @@ class FlightSearchApp():
         else:
             label.grid_forget()
 
-    def insert_placeholder(self,widget,text):
+    def insert_placeholder(self,widget,text) -> None:
         if isinstance(widget, tkk.Entry):
             widget.delete(0,tkk.END)
             widget.config(foreground ='gray')
             widget.insert(0,text)
             widget.icursor(0)
 
-    def delete_placeholder(self,event):
+    def delete_placeholder(self,event) -> None:
         widget = event.widget
         if widget.get() == "Enter location...":
             widget.delete(0,tkk.END)
             widget.config(foreground = 'black')
 
-    def is_empty(self,event):
+    def is_empty(self,event) -> bool:
         return len(event.get()) == 0
            
             
