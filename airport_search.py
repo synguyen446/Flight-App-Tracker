@@ -10,7 +10,7 @@ class AirportSearch():
         self.lon_lat_apikey='8b8e17db1edfda1ee33be825d5c1f9c7'                          # apikey for every request
 
     
-    def search(self,city:str):
+    def search(self,city:str) -> list:
 
         location = self.__get_lon_lat(city)
         if location:
@@ -39,7 +39,7 @@ class AirportSearch():
             return None
             
     # get the longitude and latitude of the city for airport search.
-    def __get_lon_lat(self,city):
+    def __get_lon_lat(self,city) -> tuple:
 
         lon_lat_query ={
             'appid':self.lon_lat_apikey,
@@ -55,4 +55,4 @@ class AirportSearch():
         else:
             lon = data['lon']
             lat = data['lat']
-            return [lon , lat]
+            return (lon , lat)

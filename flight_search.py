@@ -2,7 +2,7 @@
 
 import requests
 from flight_data import FlightData
-from datetime import datetime as dt
+from typing import Iterator
 
 class FlightSearch:
     def __init__(self,originCity,destination,departure_date,return_date,cabin = None) -> None:
@@ -38,7 +38,7 @@ class FlightSearch:
                 # 'max_stopovers' : 0,
             }
 
-    def check_flight(self) -> Iterator[flight]:
+    def check_flight(self) -> Iterator[FlightData]:
         response = requests.get(url = self._endpoint, params= self._params,
                                 headers= self._header)
         
