@@ -38,7 +38,7 @@ class FlightSearch:
                 # 'max_stopovers' : 0,
             }
 
-    def check_flight(self):
+    def check_flight(self) -> Iterator[flight]:
         response = requests.get(url = self._endpoint, params= self._params,
                                 headers= self._header)
         
