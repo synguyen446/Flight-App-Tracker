@@ -1,56 +1,64 @@
 # Flight App Tracker
  
-A Python application implemented using ```ttkbootstrap``` for user interface, and ```requests``` for requesting API endpoint.
+A Python application for searching flights between cities, implemented using the `ttkbootstrap` library for the user interface and `requests` for API calls.
 The user is prompted to input the origin city and the destination city. The program will return every airport within the proximity of the inputed cities. Then, every airport will be used as an input so that a list of available flight will be displayed to the user from all selected airports.
 
-## Guide
-The program is yet to be at its prestine stage. There will be bugs, errors that could crash the program. There are also still missing features.
-### Required Field
-- Origin City (left most entry)<br>
-- Destination City (Right most entry)<br>
-- Departing date (top datetime entry)<br>
-- Return date (bottom datetime entry), only required if chose roundtrip, will be ignored otherwise.<br>
-**The departing date will need to be earlier than the return date, otherwise the program will produce an error.**
-## Installation
-Install ttkboostrap for enhanced user interface.
-```bash
-pip install tkkbootstrap
-```
-Install requests for making request to an API endpoint. 
-```bash
-pip install requests
-```
+## Features
 
-## Verifying Installation
-```bash
-pip show "Module Name"
-```
+- **City-to-Airport Search**: Find airports within a 250km radius of the origin and destination cities.
+- **Flight Search**: Search for available flights between selected airports, based on the input dates and class preferences.
+- **User-Friendly Interface**: Interactive UI with input fields for cities, dates, and flight classes.
+- **Results Display**: View flight results in a separate, organized window.
 
-## Usage
-To start the applcation run main.py. 
+## Getting Started
 
-## Future Work
-- Create exception so that the program will not crash if the required field are empty.<br>
-- Implement a function for placing the ticket in bulk, and being able to see ticket price for infant passenger.<br>
-- Format the ouput for better user experience.<br>
-- Add placeholder for missing entry.<br>
+### Prerequisites
 
-## File
-### img
-- include all used images
-## city_data
-- include more than thousands of city entries for searching suggestion system.
-### main.py
-- Responsible for running the program
-### airport_search.py
-- Taking city as a paramenter, and return airports within range.
-### data_manager.py
-- Responsible for formating the the resulting flights and outputing them.
-### flight_search.py
-- Taking airports as input, and return available flights
-### flight_data.py
-- Format the data of the flight, including duration, cost, date, and time
-### user_interface.py
-- Responsible for user interface and experience
+- Python 3.7 or higher
+- Required Python packages: `ttkbootstrap`, `requests`
 
+### Installation
 
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-repository/flight-tracker-app.git
+   cd flight-tracker-app
+    ```
+2. Install the required packages:
+    ```bash
+    pip install ttkbootstrap requests Pillow
+    ```
+3. Run the application:
+    ```bash
+    python main.py
+    ```
+
+### Usage
+
+1. Input the Origin City and Destination City in the corresponding fields.<br>
+2. Select the Departing Date and (optional) Return Date.<br>
+3. Choose the Flight Class from the dropdown menu.<br>
+4. Click Search to find available flights.<br>
+5. The results will be displayed in a new window.<br>
+
+### Project Structure
+
+-```airport_search.py```: Handles searching for nearby airports based on city coordinates.
+-```data_manager.py```: Manages the display of flight results.
+-```flight_data.py```: Structures the flight data.
+-```flight_search.py```: Performs the flight search between airports.
+-```main.py```: Entry point of the application, integrates all components.
+-```user_interface.py```: Handles the graphical user interface.
+
+### Known Issuse
+
+- The application is still in development and may have bugs or missing features
+- Ensure that the departing date is earlier than the return date to avoid erros.
+
+### Contributing
+
+Contributions are welcome! Please fork the repository and submit a pull request.
+
+### License
+
+This project is licensed under the MIT License
