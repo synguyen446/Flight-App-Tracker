@@ -1,8 +1,12 @@
-# This class is responsible for searching for aiports that are within the 250km radius of input city.
+
 
 import requests
 
+
 class AirportSearch():
+    
+    # This class is responsible for searching for aiports that are within the 250km radius of input city.
+    
     def __init__(self) -> None:
         # Initialize API endpoints and keys
         self.airport_search_endpoint = 'https://api.tequila.kiwi.com/locations/radius'
